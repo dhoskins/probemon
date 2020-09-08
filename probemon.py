@@ -53,7 +53,7 @@ def build_packet_callback(time_fmt, logger, delimiter, mac_info, ssid, rssi):
 			fields.append(packet.info)
 			
 		if rssi:
-			rssi_val = -(256-ord(packet.notdecoded[-4:-3]))
+			rssi_val = -(256-ord(packet.notdecoded[-2:-1]))
 			fields.append(str(rssi_val))
 
 		logger.info(delimiter.join(fields))
